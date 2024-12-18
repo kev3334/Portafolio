@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: auto;
+    background-color: #000;
+    position: relative;
+
+    overflow: auto;
+    height: auto;
+    /*display:inline-block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;*/
+}
+
+.main{
+    /*max-height: auto;*/
+    display: flex;
+    margin-top: 6vh;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    /*border: red solid 1px;*/
+    flex-wrap:wrap;
+}
+header {
+    margin-bottom: 0px;
+    text-align: center;
+    margin: 10px 0px;
+    /*border: yellow solid 1px;*/
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    /*font-family: 'Exo', sans-serif;
+    font-family: 'Orbitron', sans-serif;
+    font-family: 'Press Start 2P', cursive;
+    font-family: 'Source Code Pro', monospace;
+    font-family: 'Montserrat', sans-serif;*/
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+    /*border: #007bff solid 1px;*/
+    max-height: auto;
+    margin-top: 10vh;
+    margin-bottom: 15vh;
+    
+}
+
+.card {
+    /*background-color: transparent;*/
+
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+    backdrop-filter: blur(0.25px); /* Aplica el desenfoque al fondo */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidad con Safari */
+
+
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 25vh;
+    border: #fff 1px solid;
+
+    position: relative; 
+
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.card a {
+    font-size: 1rem;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.card a:hover {
+    color: #0056b3;
+}
+
+
+.github-logo {
+    position: absolute;
+    top: 10px;    /* Distancia desde la parte superior */
+    right: 10px;  /* Distancia desde el lado derecho */
+    width: 50px;  /* Ajusta el tamaño del logo */
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.github-logo:hover {
+    transform: scale(1.1); /* Efecto de escala al pasar el mouse */
+}
+
+
+/*Fondo*/
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    animation: blink 1.5s infinite ease-in-out;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.stars .star:nth-child(odd) {
+    animation-duration: 1s;
+}
+
+.stars .star:nth-child(even) {
+    animation-duration: 1.2s;
+}
+
+/* Generación aleatoria de estrellas */
+.stars .star {
+    width: 2px;
+    height: 2px;
+    left: calc(100% * var(--random-x));
+    top: calc(100% * var(--random-y));
+    animation-delay: calc(var(--random-delay));
+}
+
+/* Creación de estrellas con posiciones aleatorias */
+body::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(white 0.1px, transparent 0);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: -1;
+}
