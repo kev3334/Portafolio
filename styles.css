@@ -91,26 +91,32 @@ h1 {
 }
 
 .card h2 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 10px;
     color: #fff;
 }
 
 .card p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .card a {
     font-size: 1rem;
-    color: #007bff;
+    color: gold;
     text-decoration: none;
     transition: color 0.3s ease;
+
+
+    position: absolute;   /* Posicionamiento absoluto respecto a la card */
+    bottom: 10px;         /* Pegado a la parte inferior con un margen de 10px */
+    left: 50%;            /* Centrado horizontalmente */
+    transform: translateX(-50%); /* Ajusta el centrado */
 }
 
 .card a:hover {
-    color: #0056b3;
+    color:goldenrod;
 }
 
 
@@ -118,8 +124,8 @@ h1 {
     position: absolute;
     top: 10px;    /* Distancia desde la parte superior */
     right: 10px;  /* Distancia desde el lado derecho */
-    width: 50px;  /* Ajusta el tamaño del logo */
-    height: 50px;
+    width: 40px;  /* Ajusta el tamaño del logo */
+    height: 40px;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
